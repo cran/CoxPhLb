@@ -1,0 +1,8 @@
+export(coxph.lb)
+export(coxphlb.ftest)
+export(coxphlb.phtest)
+export(station.test)
+export(station.test.plot)
+import(survival)
+importFrom("graphics", "legend", "lines", "plot")
+importFrom("stats", "pnorm", "rnorm", "runif", "var")

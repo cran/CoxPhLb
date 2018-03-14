@@ -1,0 +1,36 @@
+\name{station.test.plot}
+\alias{station.test.plot}
+\title{Graphical Test of the Stationarity Assumption}
+\usage{
+station.test.plot(a, v, delta)
+}
+\arguments{
+\item{a}{A vector of backward recurrence time (i.e., left-truncation time).}
+
+\item{v}{A vector of forward recurrence time (i.e., failure time minus left-truncation time).}
+
+\item{delta}{A vector of censoring indicator, 0=censored, 1=uncensored.}
+}
+\value{
+\item{A plot of Kaplan-Meier curves for backward and forward recurrence time.}{ }
+}
+\description{
+Returns a plot of two Kaplan-Meier curves for forward recurrence time and backward recurrence time.
+}
+\details{
+The stationarity assumption can be checked by comparing the Kaplan-Meier curves. More overlap of the two survival curves suggests stronger evidence of stationarity.
+}
+\examples{
+# Check the Stationarity Assumption Graphically
+station.test.plot(ExampleData1$a, ExampleData1$y-ExampleData1$a, ExampleData1$delta)
+      # plot curves
+
+station.test.plot(ExampleData2$a, ExampleData2$y-ExampleData2$a, ExampleData2$delta)
+      # plot curves
+}
+\references{
+Asgharian, M., Wolfson, D. B., and Zhang, X. (2006). Checking stationarity of the incidence rate using prevalent cohort survival data. \emph{Statistics in medicine}, 25(10), 1751-1767.
+}
+\seealso{
+\code{\link{coxph.lb}}, \code{\link{coxphlb.ftest}}, \code{\link{coxphlb.phtest}}, \code{\link{station.test}}
+}
